@@ -1,0 +1,86 @@
+#addTimeButton {
+	width: 25%;
+}
+
+body {
+	background-image: url('../images/Background.jpg');
+	background-size: cover;
+	font-family: Arial;
+	font-size: 16pt;	
+	text-align: center;
+	width: 100%;
+}
+
+button {
+	border: 5px solid #251b8c;
+	font-family: Arial;
+	font-size: 16pt;
+	width: 50%;
+}
+
+button:hover:enabled {
+	border-color: #ff0000;
+}
+
+#eliminateOptionsButton {
+	width: 25%;
+}
+
+footer {
+	bottom: 2px;
+	color: #fbec5d;
+	font-size: 12pt;
+	left: 2px;
+	position: fixed;
+}
+
+header {
+	font-size: 45pt;
+}
+
+h1 {
+	font-size: 20pt;
+}
+
+#lifelineArea {
+	margin-top: 50px;
+}
+
+.optionButton {
+	margin-top: 20px;
+}
+
+#questionArea {
+	margin-top: 50px;
+}
+
+#restartButton {
+	font-size: 20pt;
+	height: 80px;
+	margin-top: 30px;
+}
+
+.result {
+	font-size: 40pt;
+}
+
+#startButton {
+	font-size: 20pt;
+	height: 40px;
+	margin-top: 30px;
+}
+
+#timeArea {
+	margin-top: 50px;
+}
+
+.wrapper {
+	background: #fbec5d;
+	border: 9px solid #251b8c;
+	height: 630px;
+	margin-bottom: 20px;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 20px;
+	padding-top: 30px;
+}
