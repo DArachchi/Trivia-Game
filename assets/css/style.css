@@ -12,14 +12,29 @@ body {
 }
 
 button {
+	background-color: #8bc3e9;
 	border: 5px solid #251b8c;
+	color: #251b8c;
 	font-family: Arial;
 	font-size: 16pt;
 	width: 50%;
 }
 
+button:disabled:disabled {
+	background-color: #4f565a;
+	border-color: #7f8588;
+	color: #7f8588;
+}
+
 button:hover:enabled {
 	border-color: #ff0000;
+	color: #ff0000;
+}
+
+.correct {
+	color: #129012;
+	font-size: 30pt;
+	font-weight: bold;
 }
 
 #eliminateOptionsButton {
@@ -34,34 +49,43 @@ footer {
 	position: fixed;
 }
 
-header {
-	font-size: 45pt;
+h1 {
+	font-size: 24pt;
+	font-weight: bold;
 }
 
-h1 {
-	font-size: 20pt;
+h2 {
+	font-weight: normal;
+}
+
+.headerImage {
+	height: 175px;
+	width: 460px;
+}
+
+.incorrect {
+	color: #d20000;
+	font-size: 30pt;
+	font-weight: bold;
 }
 
 #lifelineArea {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 .optionButton {
-	margin-top: 20px;
+	margin-top: 15px;
 }
 
 #questionArea {
-	margin-top: 50px;
+	font-weight: bold;
+	margin-top: 30px;
 }
 
 #restartButton {
 	font-size: 20pt;
 	height: 80px;
 	margin-top: 30px;
-}
-
-.result {
-	font-size: 40pt;
 }
 
 #startButton {
@@ -71,7 +95,8 @@ h1 {
 }
 
 #timeArea {
-	margin-top: 50px;
+	font-weight: bold;
+	margin-top: 30px;
 }
 
 .wrapper {
@@ -82,5 +107,6 @@ h1 {
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-top: 20px;
-	padding-top: 30px;
+	min-width: 885px;
+	padding-top: 20px;
 }

@@ -133,10 +133,10 @@ var game = {
 			$("#lifelineArea").hide();
 			if ($(this).data("index") == game.questions[game.currentQuestion].answerIndex) {
 				game.correct++;
-				$("#questionArea").html("<p class='result'>Correct!!!</p>");
+				$("#questionArea").html("<p class='correct'>Correct!!!</p>");
 			} else {
 				game.incorrect++;
-				$("#questionArea").html("<p class='result'>Wrong!!!</p>");
+				$("#questionArea").html("<p class='incorrect'>Wrong!!!</p>");
 			}
 			game.displayCorrect();
 		});
@@ -146,7 +146,7 @@ var game = {
 		game.currentQuestion++;
 		if (game.currentQuestion == game.questions.length) {
 			$("#timeArea").html("");
-			$("#questionArea").html("Number of Questions Answered Correctly: " + game.correct + "<br><br>Number of Questions Answered Incorrectly: " + game.incorrect + "<br><button id='restartButton'>Restart Game</button>");
+			$("#questionArea").html("<p class='correct'>Number of Questions Answered Correctly: " + game.correct + "</p>" + "<br><br><p class='incorrect'>Number of Questions Answered Incorrectly: " + game.incorrect + "</p" + "<br><button id='restartButton'>Restart Game</button>");
 
 			$("#restartButton").on("click", function() {
 				game.newGame();
@@ -190,7 +190,7 @@ var game = {
 		game.timeRemaining = 10;
 		game.optionsEliminated = [],
 		$("#lifelineArea").hide();
-		$("#timeArea").html("<h1>Instructions:<br><br></h1><h2>You will have " + game.timeRemaining + " seconds to answer each of " + game.questions.length + " trivia questions.<br>There will be 2 Lifeline buttons to assists you.<br>The first will give you 5 extra seconds to answer a question.<br>The second will eliminate 2 incorrect options.<br>You may only use each lifeline once per game.</h2><br><h1>Good luck!</h1>");
+		$("#timeArea").html("<h1>Instructions:<br><br></h1><h2>You will have " + game.timeRemaining + " seconds to answer each of " + game.questions.length + " trivia questions.<br>There will be 2 Lifeline buttons to assist you.<br><br>The first will give you 5 extra seconds to answer a question.<br>The second will randomly eliminate 2 incorrect options.<br>You may only use each lifeline once per game.</h2><br><h1>Good luck!</h1>");
 		$("#questionArea").html("<button id='startButton'>Start</button>");
 		$("#startButton").on("click", function() {
 			game.askQuestions();
