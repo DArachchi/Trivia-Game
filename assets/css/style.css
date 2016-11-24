@@ -2,9 +2,18 @@
 	width: 25%;
 }
 
+.answerImage {
+	background-color: #8bc3e9;
+	border: 5px solid #251b8c;
+	height: 128px;
+	margin-top: 30px;
+	width: 128px;
+}
+
 body {
 	background-image: url('../images/Background.jpg');
 	background-size: cover;
+	color: #251b8c;
 	font-family: Arial;
 	font-size: 16pt;	
 	text-align: center;

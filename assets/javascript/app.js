@@ -26,7 +26,8 @@ var game = {
 				"Nylon",
 				"Silk",
 				"Wool"
-			]
+			],
+			src: "assets/images/Flag.gif"
 		},
 		three = {
 			question: "What planet in the solar system has the longest day, equivalent to about 244 Earth days?",
@@ -36,7 +37,8 @@ var game = {
 				"Venus",
 				"Jupiter",
 				"Neptune"
-			]
+			],
+			src: "assets/images/Planet.gif"
 		},
 		four = {
 			question: "Which of these is NOT the name of a bone located in the human inner ear?",
@@ -46,7 +48,8 @@ var game = {
 				"Cochlea",
 				"Hammer",
 				"Stirrup"
-			]
+			],
+			src: "assets/images/Ear.png"
 		},
 		five = {
 			question: "Which state has the only U.S. state flag which features different pictures on each side?",
@@ -56,7 +59,8 @@ var game = {
 				"Hawaii",
 				"New York",
 				"Oregon",
-			]
+			],
+			src: "assets/images/Oregon.png"
 		},
 		six = {
 			question: "What is the only month used in the NATO Phonetic Alphabet?",
@@ -66,7 +70,8 @@ var game = {
 				"July",
 				"October",
 				"November"
-			]
+			],
+			src: "assets/images/Radio.gif"
 		},
 		seven = {
 			question: "The term 'sesquicentennial' represents how many years?",
@@ -76,7 +81,8 @@ var game = {
 				"75",
 				"150",
 				"500"
-			]
+			],
+			src: "assets/images/Calendar.png"
 		},
 		eight = {
 			question: "Which of these words is NOT part of the three-word motto of the Olympics Games?",
@@ -86,7 +92,8 @@ var game = {
 				"Harder",
 				"Higher",
 				"Stronger"
-			]
+			],
+			src: "assets/images/Olympics.png"
 		},
 		nine = {
 			question: "The state of Michigan touches all of the Great Lakes except which one?",
@@ -96,7 +103,8 @@ var game = {
 				"Huron",
 				"Ontario",
 				"Superior"
-			]
+			],
+			src: "assets/images/Lakes.png"
 		},
 		ten = {
 			question: "Which of these is NOT a Nobel Prize category?",
@@ -106,7 +114,8 @@ var game = {
 				"Mathematics",
 				"Literature",
 				"Physiology",
-			]
+			],
+			src: "assets/images/Nobel.png"
 		}
 	],
 
@@ -117,7 +126,7 @@ var game = {
 
 	askQuestions: function() {
 		timer = setInterval(game.decrementTimer, 1000);
-		game.timeRemaining = 10;
+		game.timeRemaining = 15;
 		$("#timeArea").html("Time Remaining: " + game.timeRemaining);
 		$("#questionArea").html(game.questions[game.currentQuestion].question);
 		$("#lifelineArea").show();
@@ -166,8 +175,8 @@ var game = {
 	},
 
 	displayCorrect: function() {
-		setTimeout(game.checkStatus, 1000);
-		$("#questionArea").append("<br>The correct answer is: <br>" + game.questions[game.currentQuestion].options[game.questions[game.currentQuestion].answerIndex]);
+		setTimeout(game.checkStatus, 3000);
+		$("#questionArea").append("<br>The correct answer is: <br>" + game.questions[game.currentQuestion].options[game.questions[game.currentQuestion].answerIndex]).append("<br><img class='answerImage' src=\""+game.questions[game.currentQuestion].src+"\">");
 	},
 
 	eliminateOptions: function() {
@@ -187,7 +196,7 @@ var game = {
 		game.incorrect = 0;
 		game.currentQuestion = 0;
 		game.assistsLeft = 1;
-		game.timeRemaining = 10;
+		game.timeRemaining = 15;
 		game.optionsEliminated = [],
 		$("#lifelineArea").hide();
 		$("#timeArea").html("<h1>Instructions:<br><br></h1><h2>You will have " + game.timeRemaining + " seconds to answer each of " + game.questions.length + " trivia questions.<br>There will be 2 Lifeline buttons to assist you.<br><br>The first will give you 5 extra seconds to answer a question.<br>The second will randomly eliminate 2 incorrect options.<br>You may only use each lifeline once per game.</h2><br><h1>Good luck!</h1>");
@@ -213,7 +222,7 @@ var game = {
 	timeExpired: function() {
 		game.incorrect++;
 		$("#lifelineArea").hide();
-		$("#questionArea").html("<p class='result'>Time is up!!!</p>");
+		$("#questionArea").html("<p class='incorrect'>Time is up!!!</p>");
 		game.displayCorrect();
 	}
 }
